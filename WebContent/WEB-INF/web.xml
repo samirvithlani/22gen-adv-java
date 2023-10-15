@@ -49,4 +49,14 @@
     <servlet-name>AgeParamController</servlet-name>
     <url-pattern>/ageparamcontroller</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SendData</display-name>
+    <servlet-name>SendData</servlet-name>
+    <servlet-class>controller.SendData</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SendData</servlet-name>
+    <url-pattern>/senddata</url-pattern>
+  </servlet-mapping>
 </web-app>
