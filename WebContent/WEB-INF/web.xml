@@ -59,4 +59,14 @@
     <servlet-name>SendData</servlet-name>
     <url-pattern>/senddata</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddProductController</display-name>
+    <servlet-name>AddProductController</servlet-name>
+    <servlet-class>controller.AddProductController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddProductController</servlet-name>
+    <url-pattern>/AddProductController</url-pattern>
+  </servlet-mapping>
 </web-app>
