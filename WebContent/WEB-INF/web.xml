@@ -69,4 +69,14 @@
     <servlet-name>AddProductController</servlet-name>
     <url-pattern>/AddProductController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddStudentController</display-name>
+    <servlet-name>AddStudentController</servlet-name>
+    <servlet-class>controller.AddStudentController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddStudentController</servlet-name>
+    <url-pattern>/AddStudentController</url-pattern>
+  </servlet-mapping>
 </web-app>
