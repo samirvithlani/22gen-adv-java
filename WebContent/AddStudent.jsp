@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div>
-		<form action="AddStudentController">
+		<form action="AddStudentController1">
 
 			<div>
 				<label>Student name</label> <input type="text" name="txtStudentName">

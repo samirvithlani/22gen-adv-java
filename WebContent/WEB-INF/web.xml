@@ -89,4 +89,15 @@
     <servlet-name>AddProductController1</servlet-name>
     <url-pattern>/AddProductController1</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>AddStudentController1</display-name>
+    <servlet-name>AddStudentController1</servlet-name>
+    <servlet-class>controller.AddStudentController1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddStudentController1</servlet-name>
+    <url-pattern>/AddStudentController1</url-pattern>
+  </servlet-mapping>
 </web-app>
