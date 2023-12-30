@@ -50,7 +50,7 @@ public class AddStudentController1 extends HttpServlet {
 		// if row inserted it will return true or else false....
 		if (flag == true) {
 
-			response.sendRedirect("success.jsp");
+			response.sendRedirect("StudentListController");
 		} else {
 
 			System.out.println("record not inserted...");
