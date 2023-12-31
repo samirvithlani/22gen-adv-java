@@ -109,4 +109,14 @@
     <servlet-name>StudentListController</servlet-name>
     <url-pattern>/StudentListController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentDeleteController</display-name>
+    <servlet-name>StudentDeleteController</servlet-name>
+    <servlet-class>controller.StudentDeleteController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentDeleteController</servlet-name>
+    <url-pattern>/StudentDeleteController</url-pattern>
+  </servlet-mapping>
 </web-app>

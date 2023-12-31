@@ -20,6 +20,7 @@
 				<td>NAME</td>
 				<td>EMAIL</td>
 				<td>AGE</td>
+				<td>ACTION</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -33,6 +34,9 @@
 				<td><%=studentBean.getsName()%></td>
 				<td><%=studentBean.getsEmail()%></td>
 				<td><%=studentBean.getsAge()%>
+				<td>
+				<a href="StudentDeleteController?sid=<%=studentBean.getsId()%>">DELETE</a>
+				</td>
 			</tr>
 
 			<%

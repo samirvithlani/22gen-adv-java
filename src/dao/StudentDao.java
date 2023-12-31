@@ -12,6 +12,39 @@ import util.DBConnection;
 
 public class StudentDao {
 
+	
+	public boolean deleteStudent(int sId) {
+		
+		boolean flag = false;
+		
+		Connection conn = DBConnection.getConnection();
+		if(conn!=null) {
+			
+			
+			String DELETESQL = " delete from student where sid = ?";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(DELETESQL);
+				pstmt.setInt(1, sId);
+				
+				int res = pstmt.executeUpdate();
+				if(res>0) {
+					
+					flag = true;
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+					
+					
+			
+		}
+		return flag;
+		
+		
+	}
+	
+	
 	public boolean addStudent(StudentBean studentBean) {
 
 		boolean flag = false;
