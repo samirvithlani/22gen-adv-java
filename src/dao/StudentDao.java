@@ -12,39 +12,66 @@ import util.DBConnection;
 
 public class StudentDao {
 
-	
-	public boolean deleteStudent(int sId) {
-		
-		boolean flag = false;
-		
+	public StudentBean getStudentDetailById(int sId) {
+
+		StudentBean studentBean = null;
+
 		Connection conn = DBConnection.getConnection();
-		if(conn!=null) {
-			
-			
+		if (conn != null) {
+
+			String SELECTSQL = "select * from student where sid = ?";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(SELECTSQL);
+				pstmt.setInt(1, sId);
+
+				ResultSet rs = pstmt.executeQuery();
+				while (rs.next()) {
+					studentBean = new StudentBean();
+					studentBean.setsId(rs.getInt("sid"));
+					studentBean.setsName(rs.getString("sName"));
+					studentBean.setsEmail(rs.getString("semail"));
+					studentBean.setsAge(rs.getInt("sage"));
+
+				}
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+
+		return studentBean;
+
+	}
+
+	public boolean deleteStudent(int sId) {
+
+		boolean flag = false;
+
+		Connection conn = DBConnection.getConnection();
+		if (conn != null) {
+
 			String DELETESQL = " delete from student where sid = ?";
 			try {
 				PreparedStatement pstmt = conn.prepareStatement(DELETESQL);
 				pstmt.setInt(1, sId);
-				
+
 				int res = pstmt.executeUpdate();
-				if(res>0) {
-					
+				if (res > 0) {
+
 					flag = true;
 				}
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-					
-					
-			
+
 		}
 		return flag;
-		
-		
+
 	}
-	
-	
+
 	public boolean addStudent(StudentBean studentBean) {
 
 		boolean flag = false;
