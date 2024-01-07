@@ -39,8 +39,11 @@
 				<td><%=studentBean.getsEmail()%></td>
 				<td><%=studentBean.getsAge()%>
 				<td><a class="btn btn-danger"
-					href="StudentDeleteController?sid=<%=studentBean.getsId()%>">DELETE</a> &nbsp;
-					<a class="btn btn-info" href = "StudentDetailController?sid=<%=studentBean.getsId() %>">DETAIL</a>
+					href="StudentDeleteController?sid=<%=studentBean.getsId()%>">DELETE</a>
+					&nbsp; <a class="btn btn-info"
+					href="StudentDetailController?sid=<%=studentBean.getsId()%>">DETAIL</a>&nbsp;
+					<a class="btn btn-primary"
+					href="StudentEditController?sid=<%=studentBean.getsId()%>">Update</a>
 				</td>
 			</tr>
 

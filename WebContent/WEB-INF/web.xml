@@ -129,4 +129,24 @@
     <servlet-name>StudentDetailController</servlet-name>
     <url-pattern>/StudentDetailController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentEditController</display-name>
+    <servlet-name>StudentEditController</servlet-name>
+    <servlet-class>controller.StudentEditController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentEditController</servlet-name>
+    <url-pattern>/StudentEditController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentUpdateController</display-name>
+    <servlet-name>StudentUpdateController</servlet-name>
+    <servlet-class>controller.StudentUpdateController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentUpdateController</servlet-name>
+    <url-pattern>/StudentUpdateController</url-pattern>
+  </servlet-mapping>
 </web-app>

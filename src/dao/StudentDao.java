@@ -12,6 +12,36 @@ import util.DBConnection;
 
 public class StudentDao {
 
+	public boolean updateStudent(StudentBean studentBean, int sId) {
+
+		boolean flag = false;
+		Connection conn = DBConnection.getConnection();
+		if (conn != null) {
+
+			String updateSQl = "update student set sname=?,semail=?,sage=? where sid = ?";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(updateSQl);
+				pstmt.setString(1, studentBean.getsName());
+				pstmt.setString(2, studentBean.getsEmail());
+				pstmt.setInt(3, studentBean.getsAge());
+				pstmt.setInt(4, sId);
+
+				int res = pstmt.executeUpdate();
+				if (res > 0) {
+
+					flag = true;
+				}
+
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+		return flag;
+
+	}
+
 	public StudentBean getStudentDetailById(int sId) {
 
 		StudentBean studentBean = null;
