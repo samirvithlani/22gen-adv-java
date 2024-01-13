@@ -13,6 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<%@include file="navbar.jsp" %>
 	<%
 		List<StudentBean> students = (List<StudentBean>) request.getAttribute("students");
 	%>

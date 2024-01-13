@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.StudentBean;
+import util.ValidationUtil;
 
 /**
  * Servlet implementation class AddStudentController
@@ -26,7 +27,6 @@ public class AddStudentController extends HttpServlet {
 		String studentName = request.getParameter("txtStudentName");
 		String studentEmail = request.getParameter("txtStudentEmail");
 		int studentAge = Integer.parseInt(request.getParameter("txtStudentAge"));
-
 		String studentSkills[] = request.getParameterValues("chStudentSkills");
 
 		System.out.println("student name" + studentName);
@@ -35,22 +35,42 @@ public class AddStudentController extends HttpServlet {
 
 		// set to bean object
 
-		StudentBean studentBean = new StudentBean();
+		/// check validation
 
-		studentBean.setsAge(studentAge);
-		studentBean.setsName(studentName);
-		studentBean.setsEmail(studentEmail);
-		studentBean.setsSkills(studentSkills);
+		boolean flag = false;
 
-		
-		request.setAttribute("studentBean", studentBean);
+		// if it returns true means it fails....
+		if (ValidationUtil.isEmpty(studentName)) {
+			System.out.println("called...");
+			flag = true;
+			request.setAttribute("nameError", "name is reqired*");
+		}
 
-		// redirect to jsp file and also take object...
+		if (flag == false) {
 
-		// requestDispatcher object....
+			StudentBean studentBean = new StudentBean();
 
-		RequestDispatcher rd = request.getRequestDispatcher("PrintStudentDetail.jsp");
-		rd.forward(request, response);
+			studentBean.setsAge(studentAge);
+			studentBean.setsName(studentName);
+			studentBean.setsEmail(studentEmail);
+			studentBean.setsSkills(studentSkills);
+
+			request.setAttribute("studentBean", studentBean);
+
+			// redirect to jsp file and also take object...
+
+			// requestDispatcher object....
+
+			RequestDispatcher rd = request.getRequestDispatcher("PrintStudentDetail.jsp");
+			rd.forward(request, response);
+
+		}
+		else {
+			
+			RequestDispatcher rd = request.getRequestDispatcher("PrintStudentDetail.jsp");
+			rd.forward(request, response);
+
+		}
 
 	}
 
