@@ -149,4 +149,13 @@
     <servlet-name>StudentUpdateController</servlet-name>
     <url-pattern>/StudentUpdateController</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>TestFilter</display-name>
+    <filter-name>TestFilter</filter-name>
+    <filter-class>filters.TestFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>TestFilter</filter-name>
+    <url-pattern>/StudentListController</url-pattern>
+  </filter-mapping>
 </web-app>
