@@ -53,7 +53,7 @@ public class TestFilter implements Filter {
         	chain.doFilter(request, response);
         }
         else {
-        	System.out.println("this url is not acc,, in your region...");
+        	System.out.println("this url is not acc,, in your remgion...");
         }
   
 

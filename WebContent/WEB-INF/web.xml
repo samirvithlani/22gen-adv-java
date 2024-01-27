@@ -158,4 +158,32 @@
     <filter-name>TestFilter</filter-name>
     <url-pattern>/StudentListController</url-pattern>
   </filter-mapping>
+  <filter>
+    <display-name>AddStudentValidation</display-name>
+    <filter-name>AddStudentValidation</filter-name>
+    <filter-class>filters.AddStudentValidation</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>AddStudentValidation</filter-name>
+    <url-pattern>/AddStudentController2</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddBookController</display-name>
+    <servlet-name>AddBookController</servlet-name>
+    <servlet-class>controller.AddBookController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddBookController</servlet-name>
+    <url-pattern>/AddBookController</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <display-name>BookValidationFilter</display-name>
+    <filter-name>BookValidationFilter</filter-name>
+    <filter-class>filters.BookValidationFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>BookValidationFilter</filter-name>
+    <url-pattern>/AddBookController</url-pattern>
+  </filter-mapping>
 </web-app>

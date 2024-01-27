@@ -12,7 +12,7 @@
 		<form action="AddStudentController2">
 
 			<div>
-				<label>Student name</label> <input type="text" name="txtStudentName" required>
+				<label>Student name</label> <input type="text" name="txtStudentName">
 				<%-- <%=request.getAttribute("nameError") %> --%>
 				<%
 					String nameError = (String) request.getAttribute("nameError");
