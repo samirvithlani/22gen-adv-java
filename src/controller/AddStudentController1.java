@@ -28,6 +28,7 @@ public class AddStudentController1 extends HttpServlet {
 		String sName = request.getParameter("txtStudentName");
 		String sEmail = request.getParameter("txtStudentEmail");
 		String strAge = request.getParameter("txtStudentAge");
+		String sPassword = request.getParameter("txtStudentPassword");
 
 		int sAge = 0;
 		if (!strAge.equals("") || !strAge.equals(null)) {
@@ -61,6 +62,7 @@ public class AddStudentController1 extends HttpServlet {
 			studentBean.setsName(sName);
 			studentBean.setsEmail(sEmail);
 			studentBean.setsAge(sAge);
+			studentBean.setsPassword(sPassword);
 
 			// send studentbean object to dao addstudent() method to store data in db..
 			// create an object of studentDao class.

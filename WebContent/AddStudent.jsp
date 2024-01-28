@@ -25,7 +25,7 @@
 			<div>
 				<label>Student Email</label> <input type="text"
 					name="txtStudentEmail">
-					<%
+				<%
 					String emailError = (String) request.getAttribute("emailError");
 				if (emailError != null) {
 					out.print(emailError);
@@ -34,12 +34,16 @@
 			</div>
 			<div>
 				<label>Student Age</label> <input type="text" name="txtStudentAge">
-					<%
+				<%
 					String ageError = (String) request.getAttribute("ageError");
 				if (ageError != null) {
 					out.print(ageError);
 				}
 				%>
+			</div>
+			<div>
+				<label>Password</label> <input type="password"
+					name="txtStudentPassword">
 			</div>
 			<div>
 				<label>Skills</label> <br> HTML : <input type="checkbox"

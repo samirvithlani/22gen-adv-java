@@ -186,4 +186,34 @@
     <filter-name>BookValidationFilter</filter-name>
     <url-pattern>/AddBookController</url-pattern>
   </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionDemo</display-name>
+    <servlet-name>SessionDemo</servlet-name>
+    <servlet-class>controller.SessionDemo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionDemo</servlet-name>
+    <url-pattern>/SessionDemo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SessionDemo2</display-name>
+    <servlet-name>SessionDemo2</servlet-name>
+    <servlet-class>controller.SessionDemo2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SessionDemo2</servlet-name>
+    <url-pattern>/SessionDemo2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StudentLoginController</display-name>
+    <servlet-name>StudentLoginController</servlet-name>
+    <servlet-class>controller.StudentLoginController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StudentLoginController</servlet-name>
+    <url-pattern>/StudentLoginController</url-pattern>
+  </servlet-mapping>
 </web-app>

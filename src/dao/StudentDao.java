@@ -111,12 +111,13 @@ public class StudentDao {
 		Connection conn = DBConnection.getConnection();
 		if (conn != null) {
 
-			String INSERTSQL = "insert into student(sName,sAge,sEmail)values(?,?,?)";
+			String INSERTSQL = "insert into student(sName,sAge,sEmail,sPassword)values(?,?,?,?)";
 			try {
 				PreparedStatement pstmt = conn.prepareStatement(INSERTSQL);
 				pstmt.setString(1, studentBean.getsName());
 				pstmt.setInt(2, studentBean.getsAge());
 				pstmt.setString(3, studentBean.getsEmail());
+				pstmt.setString(4, studentBean.getsPassword());
 
 				int res = pstmt.executeUpdate();
 				if (res > 0) {
@@ -130,6 +131,37 @@ public class StudentDao {
 		}
 
 		return flag;
+
+	}
+
+	public StudentBean loginStudent(String email, String password) {
+
+		StudentBean studentBean = null;
+
+		Connection conn = DBConnection.getConnection();
+		if (conn != null) {
+
+			String selectSQL = "select * from student where semail =? and spassword =?";
+			try {
+				PreparedStatement pstmt = conn.prepareStatement(selectSQL);
+				pstmt.setString(1, email);
+				pstmt.setString(2, password);
+				ResultSet rs = pstmt.executeQuery();
+				while (rs.next()) {
+					studentBean = new StudentBean();
+					studentBean.setsId(rs.getInt("sid"));
+					studentBean.setsName(rs.getString("sname"));
+					studentBean.setsEmail(rs.getString("semail"));
+					studentBean.setsAge(rs.getInt("sage"));
+
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+		return studentBean;
 
 	}
 

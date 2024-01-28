@@ -7,6 +7,15 @@ public class StudentBean {
 	private int sAge;
 	private String sEmail;
 	private String[] sSkills;
+	private String sPassword;
+
+	public String getsPassword() {
+		return sPassword;
+	}
+
+	public void setsPassword(String sPassword) {
+		this.sPassword = sPassword;
+	}
 
 	public String[] getsSkills() {
 		return sSkills;

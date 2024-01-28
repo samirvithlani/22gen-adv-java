@@ -38,25 +38,25 @@ public class TestFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
-		TimeZone defaultTimeZone = TimeZone.getDefault();
-
-        // Get the ID of the timezone (e.g., "America/New_York")
-        String timeZoneId = defaultTimeZone.getID();
-
-        // Get the display name of the timezone (e.g., "Eastern Standard Time")
-        String timeZoneDisplayName = defaultTimeZone.getDisplayName();
-
-        System.out.println("Timezone ID: " + timeZoneId);
-        System.out.println("Timezone Display Name: " + timeZoneDisplayName);
-        if(!timeZoneDisplayName.equals("India Standard Time")) {
-        
-        	chain.doFilter(request, response);
-        }
-        else {
-        	System.out.println("this url is not acc,, in your remgion...");
-        }
-  
-
+//		TimeZone defaultTimeZone = TimeZone.getDefault();
+//
+//        // Get the ID of the timezone (e.g., "America/New_York")
+//        String timeZoneId = defaultTimeZone.getID();
+//
+//        // Get the display name of the timezone (e.g., "Eastern Standard Time")
+//        String timeZoneDisplayName = defaultTimeZone.getDisplayName();
+//
+//        System.out.println("Timezone ID: " + timeZoneId);
+//        System.out.println("Timezone Display Name: " + timeZoneDisplayName);
+//        if(!timeZoneDisplayName.equals("India Standard Time")) {
+//        
+//        	chain.doFilter(request, response);
+//        }
+//        else {
+//        	System.out.println("this url is not acc,, in your remgion...");
+//        }
+//  
+		chain.doFilter(request, response);
 		
 	}
 
