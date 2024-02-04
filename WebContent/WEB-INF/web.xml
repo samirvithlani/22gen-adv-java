@@ -216,4 +216,23 @@
     <servlet-name>StudentLoginController</servlet-name>
     <url-pattern>/StudentLoginController</url-pattern>
   </servlet-mapping>
+  <filter>
+    <display-name>LoginRequired</display-name>
+    <filter-name>LoginRequired</filter-name>
+    <filter-class>filters.LoginRequired</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginRequired</filter-name>
+    <url-pattern>/AddStudent.jsp</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LogoutController</display-name>
+    <servlet-name>LogoutController</servlet-name>
+    <servlet-class>controller.LogoutController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LogoutController</servlet-name>
+    <url-pattern>/LogoutController</url-pattern>
+  </servlet-mapping>
 </web-app>

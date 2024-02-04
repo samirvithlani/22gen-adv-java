@@ -13,7 +13,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%@include file="navbar.jsp" %>
+
+	<%
+		StudentBean studentBean1 = (StudentBean) session.getAttribute("studentBean");
+	if (studentBean1 != null) {
+	%>
+	
+	<%@include file="navbar.jsp"%>
 	<%
 		List<StudentBean> students = (List<StudentBean>) request.getAttribute("students");
 	%>
@@ -55,6 +61,11 @@
 		</tbody>
 
 	</table>
+	<%
+		} else {
+		response.sendRedirect("Login.jsp");
+	}
+	%>
 
 </body>
 </html>
