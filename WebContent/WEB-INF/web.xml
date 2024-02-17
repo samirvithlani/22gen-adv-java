@@ -235,4 +235,13 @@
     <servlet-name>LogoutController</servlet-name>
     <url-pattern>/LogoutController</url-pattern>
   </servlet-mapping>
+  <listener>
+    <listener-class>listners.BackupListner</listener-class>
+  </listener>
+  <listener>
+    <listener-class>listners.SessionAlert</listener-class>
+  </listener>
+  <listener>
+    <listener-class>listners.SessionAttr</listener-class>
+  </listener>
 </web-app>
