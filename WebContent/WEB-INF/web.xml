@@ -244,4 +244,14 @@
   <listener>
     <listener-class>listners.SessionAttr</listener-class>
   </listener>
+  <servlet>
+    <description></description>
+    <display-name>AddEmployeeController</display-name>
+    <servlet-name>AddEmployeeController</servlet-name>
+    <servlet-class>controller.AddEmployeeController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddEmployeeController</servlet-name>
+    <url-pattern>/AddEmployeeController</url-pattern>
+  </servlet-mapping>
 </web-app>

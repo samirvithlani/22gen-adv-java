@@ -1,0 +1,30 @@
+question bean
+id
+name
+option 1
+option 2
+3
+4
+correct ans
+-------------
+examBean
+
+id
+name
+total
+marks
+questions
+-----
+
+studentbean
+id
+name
+email
+age
+password
+--------------
+student_exam
+sid
+eid
+
+
